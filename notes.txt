@@ -1,5 +1,6 @@
 1. The categorical features are seasons, holiday, functioning_day and weekday, 
 while the rest of the features are numerical. That's reasonable. 
-2. The standard deviation of the target, rented_bike_count, is very high. 
-This could indicate a skewed distribution. That is also noticeable for visibility 
-and days of the year. This is not a problem for days of the year except for visibility. 
+3. Mutual information score suggests we remove the holiday feature from the dataset. 
+This will be tested when creating the baseline model.  
+4. Correlation coefficient scores suggests daysofyear, month and day might not 
+have predictive importance with the target variable.
