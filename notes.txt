@@ -4,3 +4,50 @@ while the rest of the features are numerical. That's reasonable.
 This will be tested when creating the baseline model.  
 4. Correlation coefficient scores suggests daysofyear, month and day might not 
 have predictive importance with the target variable.
+
+Training the model 
+1. split 
+2. dict vectorize
+3. standard scale for regularization. here's how
+# Import scaler method from sklearn
+from sklearn.preprocessing import StandardScaler
+# Create scaler object
+scaler = StandardScaler()
+# Create scaled version of the predictors (there is no need to scale the response)
+X_scaled = scaler.fit_transform(X)
+# Convert the scaled predictor values into a dataframe
+X_standardise = pd.DataFrame(X_scaled,columns=X.columns)
+X_standardise.head()
+please, make sure you scale the validation and test seet.
+
+Modeling:
+1. ridge regression
+# Import the ridge regression module from sklearn
+from sklearn.linear_model import Ridge
+# Create ridge model
+ridge = Ridge()
+# Train the model
+ridge.fit(X_train, y_train)
+
+2. lasso regression
+# Import LASSO module
+from sklearn.linear_model import Lasso
+# Create LASSO model object, setting alpha to 0.01
+lasso = Lasso(alpha=0.01)
+# Train the LASSO model
+lasso.fit(X_train, y_train) 
+
+3. support vector regressor
+from sklearn.svm import SVR
+model = SVR(C=1.0, epsilon=0.2)
+model.fit(X, y)
+
+4. KNN 
+from sklearn.neighbors import KNeighborsRegressor
+neigh = KNeighborsRegressor(n_neighbors=2)
+neigh.fit(X, y)
+
+5. AdaBoostRegressor 
+from sklearn.ensemble import AdaBoostRegressor
+regr = AdaBoostRegressor(random_state=0, n_estimators=100)
+regr.fit(X, y)
