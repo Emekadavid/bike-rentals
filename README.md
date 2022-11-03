@@ -16,9 +16,13 @@ Here's how to do it.
 
 1. Fork this repo so you can own it.
 2. On your local machine clone your forked repo.
-3. . Install pipenv in your machine to create the local environment 
+3. Install pipenv in your machine to create the local environment 
+
 ```pip install pipenv```
+
 4. Navigate to the directory where you cloned this repo
-5. Create a virtual environment using pipenv
+5. Create a virtual environment using pipenv in that directory.
+
 ```pipenv shell```
+
 6. 
