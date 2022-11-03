@@ -8,3 +8,17 @@ This project used data collected from Seoul, South Korea, and made accessible in
 
 During the EDA, after taking the mutual information scores for categorical features and the correlation coefficient for numeric features, four features looked to have low predictive powers. They were holiday, daysofyear, month and day. But after comparing their RMSE score against the baseline model, I decided to train the dataset with all the complete features. 
 
+# Deploying the app
+
+The first deployment was locally in a flask web app with the gunicorn framework as the production backend. Gunicorn only works with Linux systems. If you are on a Windows machine, then use waitress as the production backend for the web app on flask. 
+
+Here's how to do it. 
+
+1. Fork this repo so you can own it.
+2. On your local machine clone your forked repo.
+3. . Install pipenv in your machine to create the local environment 
+```pip install pipenv```
+4. Navigate to the directory where you cloned this repo
+5. Create a virtual environment using pipenv
+```pipenv shell```
+6. 
