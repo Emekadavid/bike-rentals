@@ -2,11 +2,27 @@
 
 Bikes are essential to mobility in big cities. They also serve to reduce the impact of transportation on global warming and climate change. Therefore, it is important to make accessibility to bikes a matter of priority for city councils. 
 
-This project used data collected from Seoul, South Korea, and made accessible in the UCI Machine Learning repository to predict the hourly count of bike rentals among Seoul residents. The result of this project would help city councils to provide bikes for rental purposes that would make the supply stable and convenient for residents. Some of the features of the data includes weather information, date information, and the target feature is the number of bike rentals counted each hour. 
+This project used data collected from Seoul, South Korea, and made accessible in the UCI Machine Learning repository to predict the hourly count of bike rentals among Seoul residents. The result of this project would help cities like Seoul to provide bikes for rental purposes that would make the supply stable and convenient for residents. Some of the features of the data includes weather information, date information, and the target feature is the number of bike rentals counted each hour. 
+
+Many cities that have high bike usage and want to reduce the impact of transportation on climate change and global warming are looking for ways to encourage their citizens to switch to using bikes and other sustainable transportation methods. Bike rentals like taxis would then have to be provisioned. To be efficient in provisioning this, local authorities need an efficient way to predict the demand for bikes within their jurisdiction. 
+
+This solution uses the popular XGBoost Model to predict hourly bike rental demand based on data from Seoul city between the years 2017 and 2018. We hope the model in this project would be used in the future to solve this problem. 
 
 # Exploratory Data Analysis (EDA)
 
 During the EDA, after taking the mutual information scores for categorical features and the correlation coefficient for numeric features, four features looked to have low predictive powers. They were holiday, daysofyear, month and day. But after comparing their RMSE score against the baseline model, I decided to train the dataset with all the complete features. 
+
+A full outline of what was done for the EDA can be seen by looking through the `notebook.ipynb` file. 
+
+# Model Training
+
+I trained the cleaned and processed data on several models including linear regression, support vector regressor, k nearest neighbor, decision tree regressor, ridge regression, lasso regression, adaboost regressor, random forest regressor, and the XGBoost regressor. 
+
+The XGBoost model turned out to have the best performance among all the regressors and models. So the final model was created based on the XGBoost model. The final model and the training process can be found in the `train.py` file. The model and supporting artefacts were then saved in a pickle file, `model.bin`. 
+
+# Dataset used
+
+The data for the project was taken from UCI Machine Learning Repository. It is included with this project as `seoulbikedata.csv`. You can [download it from the UCI site](https://archive.ics.uci.edu/ml/datasets/Seoul+Bike+Sharing+Demand).
 
 # Deploying the app on flask
 
