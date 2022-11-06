@@ -110,3 +110,7 @@ I assume you are using a Linux machine or Windows Subsystem for Linux if on a Wi
 5. Open another terminal and run the   ` client.py ` file. 
 
 Voila! You have run the app and received the prediction. 
+
+# Video Explaining Everything
+
+I created this video to explain my app on bike rental prediction. [You can watch it here](https://youtu.be/ERyJ0LcnanU)
